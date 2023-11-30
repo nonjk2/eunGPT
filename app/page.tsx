@@ -1,18 +1,24 @@
-'use client';
+"use client";
 
-import { useChat } from 'ai/react';
+import { useChat } from "ai/react";
 
 export default function Chat() {
-  const { messages, input, handleInputChange, handleSubmit, data } = useChat();
+  const { messages, input, handleInputChange, handleSubmit, data, isLoading } =
+    useChat();
   return (
     <div className="flex flex-col w-full max-w-md py-24 mx-auto stretch">
       {messages.length > 0
-        ? messages.map(m => (
-            <div key={m.id} className="whitespace-pre-wrap">
-              {m.role === 'user' ? 'User: ' : 'AI: '}
-              {m.content}
-            </div>
-          ))
+        ? messages.map((m) => {
+            if (m.content.startsWith("https://")) {
+              return <img src={m.content} alt="adf" />;
+            }
+            return (
+              <div key={m.id} className="whitespace-pre-wrap">
+                {m.role === "user" ? "User: " : "AI: "}
+                {m.content}
+              </div>
+            );
+          })
         : null}
 
       <form onSubmit={handleSubmit}>
