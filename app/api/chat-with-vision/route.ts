@@ -23,7 +23,6 @@ export async function POST(req: Request) {
     model: "gpt-4-vision-preview",
     stream: true,
     max_tokens: 150,
-
     messages: [
       // ...initialMessages,
       {
@@ -32,20 +31,6 @@ export async function POST(req: Request) {
           {
             type: "text",
             text: "Use text to describe the person in the photo as a prompt.",
-          },
-          {
-            type: "image_url",
-            image_url: {
-              url: "https://file.notion.so/f/f/ba5b9793-da59-4620-84f6-2e8500be2ae2/0914ab0c-3180-40a8-9fc7-9acda96bf604/IMG_7680.jpeg?id=2a37c5a8-2abd-4227-971b-fabf3a73f3ed&table=block&spaceId=ba5b9793-da59-4620-84f6-2e8500be2ae2&expirationTimestamp=1701352800000&signature=Rch2Qg6ZsgPpPVydX9u4vrLCUMg2uPmJaSwDn6z3QvI&downloadName=IMG_7680.jpeg",
-              detail: "high",
-            },
-          },
-          {
-            type: "image_url",
-            image_url: {
-              url: "https://file.notion.so/f/f/ba5b9793-da59-4620-84f6-2e8500be2ae2/0914ab0c-3180-40a8-9fc7-9acda96bf604/IMG_7680.jpeg?id=2a37c5a8-2abd-4227-971b-fabf3a73f3ed&table=block&spaceId=ba5b9793-da59-4620-84f6-2e8500be2ae2&expirationTimestamp=1701352800000&signature=Rch2Qg6ZsgPpPVydX9u4vrLCUMg2uPmJaSwDn6z3QvI&downloadName=IMG_7680.jpeg",
-              detail: "high",
-            },
           },
           {
             type: "image_url",
